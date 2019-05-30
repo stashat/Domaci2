@@ -1,0 +1,1 @@
+print('filter - "" out empty strings')

@@ -1,0 +1,10 @@
+Red Dead Redemption;8.9;2010;Rockstar San Diego;Action, Shooter, Third-Person, Historic, Action Adventure, Historic, Historic, Open-World
+Dark Souls;8.8;2011;From Software;Role-Playing, Action RPG, Action RPG
+The Last of Us;9.2;2013;Naughty Dog;Modern, Adventure, General, Action Adventure
+Uncharted;7.9;2007;Naughty Dog;Action, General
+Tomb Raider;8.0;2013;Crystal Dynamics; Fantasy, Action Adventure, General, Linear
+Assassin’s Creed: Rogue;7.5;2014;Ubisoft Sofia; Action Adventure, Historic, Open-World
+BioShock Infinite;8.6;2013; Irrational Games;Action, Shooter, Shooter, First-Person, Sci-Fi, Sci-Fi, Arcade
+The Sims 3;7.7;2009;The Sims Studio;Simulation, Miscellaneous, Virtual Life, Virtual, Virtual Life
+Batman: Arkham City;8.7;2011;Rocksteady Studios;Action Adventure, Fantasy, Fantasy, Open-World
+Call of Duty: Black Ops;5.4;2010;Treyarch; Action, Shooter, Shooter, First-Person, Historic, Historic, Arcade
