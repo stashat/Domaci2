@@ -1,11 +1,11 @@
-﻿Dark Souls;8.8;2011;From Software;Role-Playing, Action RPG, Action RPG
+D;8.89;2019;From Software;Role-Playing, Action RPG, Action RPG
+Dark Souls;8.8;2011;From Software;Role-Playing, Action RPG, Action RPG
 The Last of Us;9.2;2013;Naughty Dog;Modern, Adventure, General
 Uncharted;7.9;2007;Naughty Dog;Action, General
 Tomb Raider;8.0;2013;Crystal Dynamics;Fantasy, Action Adventure, General
-Assassin’s Creed: Rogue;7.5;2014;Ubisoft Sofia; Action Adventure, Historic, Open-World
-BioShock Infinite;8.6;2013; Irrational Games;Action, Shooter, Sci-Fi
+Assassin's Creed: Rogue;7.5;2014;Ubisoft Sofia;Action Adventure, Historic, Open-World
+BioShock Infinite;8.6;2013;Irrational Games;Action, Shooter, Sci-Fi
 The Sims 3;7.7;2009;The Sims Studio;Simulation, Miscellaneous, Virtual Life
 Batman: Arkham City;8.7;2011;Rocksteady Studios;Action Adventure, Fantasy, Open-World
-Call of Duty: Black Ops;5.4;2010;Treyarch; Action, Shooter, First-Person
-Red Dead Redemption;8.9;2010;Rockstar San Diego;Action, Shooter, Historic
+Call of Duty: Black Ops;5.4;2010;Treyarch;Action, Shooter, First-Person
 Red Dead Redemption;8.9;2010;Rockstar San Diego;Action, Shooter, Historic
