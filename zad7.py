@@ -40,11 +40,9 @@ def chk_zanrovi(zanr):
 with open("igrice.txt", 'r') as f:
     igrice = f.readlines()
     igrice = [x.strip() for x in igrice]
-    # print(igrice)
 igrice_split = []
 for igra in igrice:
     igrice_split.append(igra.split(';'))
-# print(igrice_split)
 
 # filtriranje fajla
 igrice_filter = []
@@ -52,25 +50,9 @@ for igra in igrice_split:
     if (chk_naziv(igra[0]) and chk_ocjena(igra[1]) and chk_godina(igra[2]) and
             chk_izdavac(igra[3]) and chk_zanrovi(igra[4])):
         igrice_filter.append(igra)
-# print(igrice_filter)
 
 
 # dictionary
-'''
-ODJE TI JE GRESKA.
-TREBA NAPRAVITI LISTU SA ELEMENTIMA KOJI SU DICTIONARU
-A TI SI NAPRAVILA SAMO JEDA DICTIONARY KOJI IMA ELEMTE OD 
-ZADNJE IRETACIJE KROZ LISTU
-Red Dead Redemption - je zadnji u listi i zato ti se pojavljivao
-for i in igrice_filter:
-    dict_igrice = {
-        'naziv' : i[0],
-        'ocjena' : i[1],
-        'godina' : i[2],
-        'izdavac' : i[3],
-        'zanrovi' : i[4]
-    }
-'''
 list_dict_igrice = []
 for igrica in igrice_filter:
     dict_igrica = {
@@ -81,10 +63,11 @@ for igrica in igrice_filter:
         'zanrovi': igrica[4]
     }
     list_dict_igrice.append(dict_igrica)
-# print(list_dict_igrice)
 
 # korisnicki dio - glavna petlja
 while True:
+    print('----------Filtrirane igrice----------')
+    print(igrice_filter)
     main_petlja = input('---------------------------------\nIzaberi:\n1-za '
                         'unos novog filma\n2-za filterisanje\n3-za izlaz iz '
                         'programa\n')
@@ -114,6 +97,7 @@ while True:
             print('------------------\nPogresno unesen zanr\n----------------')
 
     if main_petlja == '2':
+        # filtriranje
         izbor_filtriranja = input('----------------------\nUnesite atribut '
                                   'koji zelite da filtrirate:\n'
                                   '1-naziv\n'
@@ -121,13 +105,53 @@ while True:
                                   '3-godina\n'
                                   '4-izdavac\n'
                                   '5-zanr\n')
+        # filtriranje po nazivu
         if izbor_filtriranja == '1':
             naziv = input('----------------------\n'
                           'Unesite rijec/slovo kojim pocinje naziv: ')
             for dict_igrica in list_dict_igrice:
                 if naziv == dict_igrica['naziv'][0:len(naziv)].lower():
-                    print('sledeca igrica/e zadovoljava filter')
+                    print('Sledeca igrica/e zadovoljava filter:'
+                          '\n----------------------')
                     print(dict_igrica)
+        # filtriranje po ocjeni
+        if izbor_filtriranja == '2':
+            ocjena = input('----------------------\n'
+                           'Unesite ocjenu : ')
+            for dict_igrica in list_dict_igrice:
+                if ocjena < dict_igrica['ocjena']:
+                    print('Sledeca igrica/e zadovoljava filter:'
+                          '\n----------------------')
+                    print(dict_igrica)
+        # filtriranje po godini
+        if izbor_filtriranja == '3':
+            izbor_godine = input('Zelite li da prikazete igrice:'
+                                 '\n1-poslije unesene godine'
+                                 '\n2-prije unesene godine\n')
+            if izbor_godine == '1':
+                godina_poslije = input('Unesite godinu: ')
+                for dict_igrica in list_dict_igrice:
+                    if godina_poslije < dict_igrica['godina']:
+                        print('Sledeca igrica/e zadovoljava filter:'
+                              '\n----------------------')
+                        print(dict_igrica)
+            if izbor_godine == '2':
+                godina_prije = input('Unesite godinu: ')
+                for dict_igrica in list_dict_igrice:
+                    if godina_prije >= dict_igrica['godina']:
+                        print('Sledeca igrica/e zadovoljava filter:'
+                              '\n----------------------')
+                        print(dict_igrica)
+        # filtriranje po izdavacu
+        if izbor_filtriranja == '4':
+            izdavac = input('Unesite rijec/slovo kojim pocinje'
+                            'naziv izdavaca: ')
+            for dict_igrica in list_dict_igrice:
+                if izdavac == dict_igrica['izdavac'][0:len(izdavac)].lower():
+                    print('Sledeca igrica/e zadovoljava filter:'
+                          '\n----------------------')
+                    print(dict_igrica)
+        # filtriranje po zanrovima
 
     if main_petlja == '3':
         print('Izabrao je izlaz iz programa')
