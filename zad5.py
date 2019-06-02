@@ -1,52 +1,46 @@
-htmlString = '''
-<h1 class atributttttybty  >        Stasa Tadic jede hleb   </h1> 
-<p> Stasa je uradila domaci </p>
+htmlString1 = '''<article id="animals">
 
-<h1> stasa </h1>
-'''
-'''if '<h1>' in htmlString:
-    start = htmlString.index('<h1>') + len('<h1>')
-    end = htmlString.index('</h1>', start)
-    print(htmlString[start:end])'''
+        <h1 class="main-heading">Nature's Wonders</h1>
+        <p>In this article we discuss animals.</p>
+
+        <section id="birds">
+                <h2 class="favourite">Birds</h2>
+                <p>
+                        Forest is a wonderful place to see birds.
+                </p>
+        </section>
+
+        <section id="butterflies">
+                <h2>Butterflies</h2>
+                <p>
+                    Butterflies possess some of the most striking colour
+                    displays from nature.
+                </p>
+        </section>
+
+</article>'''
+
+
+def getTagContentF(HTMLstring, HTMLtag):
+    HTMLfound_l = []
+    HTMLlist = HTMLstring.splitlines()
+    HTMLlist = list(map(str.lstrip, HTMLlist))
+    HTMLlist = list(map(str.rstrip, HTMLlist))
+    ostatak = ''.join(HTMLlist)
+    print(ostatak)
+    kraj = False
+    while not kraj:
+        try:
+            start = ostatak.index('<' + HTMLtag)
+            end = ostatak.index('</' + HTMLtag + '>')
+            HTMLfound = ostatak[start:end]
+            start1 = HTMLfound.index('>')+1
+            HTMLfound = HTMLfound[start1:]
+            HTMLfound_l.append(HTMLfound)
+            ostatak = ostatak[end + 3 + len(HTMLtag):]
+        except ValueError:
+            kraj = True
+    return HTMLfound_l
 
 input_tag = input('Unesite tag: ')
-iskorisceni = []
-class Get_Html:
-    def __init__(self, string, tag):
-        self.tag = tag
-        self.str = string
-
-
-
-    def get_h1(self, tag):
-        if self.tag=='h1':
-            if '<h1' in self.str :
-                start = self.str.index('h1') + self.str.index('>')
-                end = self.str.index('</h1', start)
-                return self.str[start:end].strip()
-        else:
-            print('nema h1 taga')
-
-    def get_tag(self):
-        tag_start = '<' + self.tag
-        tag_end =  '</' + self.tag
-        if tag_start in self.str :
-            for tag_start in self.str:
-                if ( (self.str.index(tag_start) and (self.str.index(tag_end) ) not in iskorisceni:
-                    iskorisceni.append(self.str.index(tag_start))
-                    iskorisceni.append(self.str.index(tag_end))
-                    print(iskorisceni)
-                    start = self.str.index(tag_start) + self.str.index('>')
-                    print(start)
-                    end = self.str.index(tag_end, start)
-                    print(end)
-                    return self.str[start:end].strip()
-        else:
-            print('nema taga')
-
-htmlString = Get_Html(htmlString,input_tag)
-
-print(htmlString.get_h1(input_tag))
-
-print(htmlString.get_tag())
-
+print(getTagContentF(htmlString1, input_tag))
