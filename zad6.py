@@ -1,5 +1,3 @@
-# Moja prva klasa!
-# Stasa 2019 05 25
 
 
 class Zahtjev:
